@@ -2,3 +2,7 @@ bower_components
 node_modules
 /logger
 /storage
+
+usbserial-A1014KGL
+
+.gitignore

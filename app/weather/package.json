@@ -1,0 +1,12 @@
+{
+  "name": "weather",
+  "version": "0.0.0",
+  "description": "Yahoo! Weather Grabber",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "repository": {},
+  "dependencies": {
+    "yql": "*"
+  }
+}

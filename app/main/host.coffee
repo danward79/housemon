@@ -17,6 +17,12 @@ module.exports = (app, plugin) ->
   app.register 'nodemap.rf12-19', 'ookrelay'
   app.register 'nodemap.rf12-23', 'roomnode'
   app.register 'nodemap.rf12-24', 'roomnode'
+  
+  app.register 'nodemap.rf12-868,212,5', 'emontxNode'
+  app.register 'nodemap.rf12-868,212,11', 'emonLCD'
+  app.register 'nodemap.rf12-868,212,17', 'barotxNode'
+  app.register 'nodemap.rf12-868,212,16', 'indoorClimateNode'
+  app.register 'nodemap.rf12-868,212,18', 'wxtxNode'
 
   app.on 'running', ->
     Logger = @registry.sink.logger
@@ -35,7 +41,7 @@ module.exports = (app, plugin) ->
     #   console.log 'db#', array.length
     #   for x in array
     #     console.log ' ', x.key, '=', x.value
-    
+    ###
     readings = createLogStream('app/replay/20121130.txt.gz')
       .pipe(new Replayer)
       .pipe(new Parser)
@@ -46,7 +52,7 @@ module.exports = (app, plugin) ->
 
     readings
       .pipe(new StatusTable app.db)
-    
+    ###
     jeelink = new Serial('usb-A1014KGL').on 'open', ->
 
       jeelink # log raw data to file, as timestamped lines of text
@@ -60,4 +66,4 @@ module.exports = (app, plugin) ->
       jeelink
           .pipe(new StatusTable app.db)
           
-    timebroadcast = new TimeBroadcast '/dev/usbserial-A1014KGL'
+    timebroadcast = new TimeBroadcast 'usbserial-A1014KGL'
