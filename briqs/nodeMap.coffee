@@ -43,6 +43,14 @@ exports.rf12nodes =
   # included for the DIJN LDR example
   100:
     1: 'lightNode'
+    
+  212:
+    1: 'lightNode'
+    5: 'emontxNode'
+    11: 'emonLCD'
+    16: 'indoorClimateNode'
+    17: 'barotxNode'
+    18: 'wxtxNode'
 
 # devices are mapped to RF12 configs, since that is not present in log files
 # TODO: same time-dependent comment as above, this mapping is not fixed
@@ -91,6 +99,13 @@ exports.locations =
   'S300-2': title: 'balkon'
   'S300-3': title: 'badkamer'
   'EMX-2': title: 'labtafel'
+  
+  'RF12:212:5': title: 'Power Node'
+  'RF12:212:11': title: 'LCD Node'
+  'RF12:212:16': title: 'Indoor Node'
+  'RF12:212:17': title: 'Baro Node'
+  'RF12:212:18': title: 'Wxtx Node'
+  
 
 # TODO need a way to prevent local extension/alteration, for the replay briq
 localPath = "#{__dirname}/nodeMap-local.coffee"
