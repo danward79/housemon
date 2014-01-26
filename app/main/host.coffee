@@ -52,6 +52,7 @@ module.exports = (app, plugin) ->
 
     readings
       .pipe(new StatusTable app.db)
+<<<<<<< HEAD
     ###
     jeelink = new Serial('usb-A1014KGL').on 'open', ->
 
@@ -67,3 +68,20 @@ module.exports = (app, plugin) ->
           .pipe(new StatusTable app.db)
           
     timebroadcast = new TimeBroadcast 'usbserial-A1014KGL'
+=======
+    
+    # jeelink = new Serial('usb-A1014KGL').on 'open', ->
+    # 
+    #   jeelink # log raw data to file, as timestamped lines of text
+    #       .pipe(new Logger) # sink, can't chain this further
+    # 
+    #   jeelink # log decoded readings as entries in the database
+    #       .pipe(new Parser)
+    #       .pipe(new Dispatcher)
+    #       .pipe(new ReadingLog app.db)
+    #       
+    #   jeelink
+    #       .pipe(new StatusTable app.db)
+          
+    # timebroadcast = new TimeBroadcast '/dev/usbserial-A1014KGL'
+>>>>>>> upstream/master
