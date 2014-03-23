@@ -2,7 +2,12 @@ bower_components
 node_modules
 /logger
 /storage
+<<<<<<< HEAD
 
 usbserial-A1014KGL
 
 .gitignore
+=======
+/storage-old
+/files
+>>>>>>> upstream/master
